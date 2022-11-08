@@ -1,0 +1,52 @@
+<link rel="stylesheet" href="/css/form_style.css">
+
+<!-- Cabeçalho -->
+    <header class="corinthians">
+       <div>
+           <img src="img/Meu projeto.png" alt="Foto" height="80px">    
+        </div>
+    </header>
+    <!-- Cadastro -->
+    <main class="container">
+        <h2>CADASTRO</h2>
+        
+        <!-- Formulário -->
+        <form action="/" method="POST">
+            <!-- Nome do Visitante -->
+            <div class='input-field'>
+                <input type="text" name="nome" id="nome" placeholder="Insira o nome" required>
+                <span class="obrigatorio">*</span>
+                <div class="underline"></div>
+            </div>
+            
+            <!-- Telefone do Visitante -->
+            <div class='input-field'>
+                <input type="tel" maxlength="14" name="telefone" id="telefone" data-js="phone" placeholder="(xx) xxxxx-xxxx">
+                <div class="underline"></div>
+            </div>
+                
+            <!-- Email do Visistante -->
+            <div class='input-field'>
+                <input type="email" name="email" id="email" placeholder="Insira o E-Mail">
+                <div class="underline"></div>
+            </div>
+
+            <!-- Idade do Visistante -->
+            <div class='input-field'>
+                <input type="number" name="idade" id="idade" placeholder="Insira a Idade" required>
+                <span class="obrigatorio">*</span>
+                <div class="underline"></div>
+            </div>
+                    <!-- Botão de cadastrar  -->
+                    <input type="submit" value="Cadastrar" class="botao">
+
+                    <!-- Botão para página da lista de cadastros -->
+                    <a href="/lista" class="botao">Lista de Cadastros</a>
+
+<script>
+    if ({{alerta}} == true){
+        alert('Visitante Cadastrado com Sucesso!')
+    }
+</script>
+        </form>
+    </main>

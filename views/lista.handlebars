@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/list_style.css">
+    <title>Lista de Cadastros</title>
+</head>
+<body>
+    <!-- Cabeçalho -->
+    <header class="corinthians">
+       <div>
+           <img src="img/Meu projeto.png" alt="Foto" height="80px">    
+        </div>
+        <a href="/" class="botao">Página de Cadastro</a>
+    </header>
+    <main class="list_container">
+        
+        <table>
+            <tr>
+                <td class="titulos">Nome</td>
+                <td class="titulos">Telefone</td>
+                <td class="titulos">Email</td>
+                <td class="titulos">Idade</td>
+            </tr>
+        {{#each tabela}}
+            <tr>
+                <td>{{nome}}</td>
+                <td>{{telefone}}</td>
+                <td>{{email}}</td>
+                <td>{{idade}}</td>
+            </tr>
+        {{/each}}
+            
+        </table>
+    </main>
+    
+</body>
+</html>
