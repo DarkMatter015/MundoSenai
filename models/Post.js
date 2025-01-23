@@ -1,20 +1,19 @@
 const db = require("./db");
 
 async function Post(nome, telefone, email, idade){
-    try{
-        // console.log('iniciando conexao')
-        // await db.client.connect()
-        // console.log('conexao bem sucedida')
-        const res = await db.client.query('insert into "public".cadastro("nome", "telefone", "email", "idade") values ('+"'"+nome+"', '"+telefone+"', '"+email+"', '"+idade+"');")
-        // console.table(res)
-        
-    } 
-    catch (ex){
-        console.log('Erro no Post: ' + ex)
+    try {
+        console.log('Iniciando inserção no banco de dados...');
+        const query = `
+            INSERT INTO cadastro (nome, telefone, email, idade)
+            VALUES ($1, $2, $3, $4)
+        `;
+        const values = [nome, telefone, email, idade];
+        const res = await db.query(query, values);
+        console.log('Inserção concluída com sucesso:', res.rowCount, 'linha(s) afetada(s).');
+    } catch (error) {
+        console.error('Erro ao inserir dados:', error);
+        throw error;
     }
-    finally{
-        // await db.client.end()
-        // console.log('Cliente desconectado')
-    }}
+}
 
 module.exports = Post

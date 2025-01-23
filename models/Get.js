@@ -2,20 +2,14 @@ const db = require("./db");
 
 async function Get(){
     try{
-        // console.log('iniciando conexao')
-        // await db.client.connect()
-        // console.log('conexao bem sucedida')
-        const res = await db.client.query('select * from "cadastro" ORDER BY id DESC ')
-        console.log('Database pegada!')
-        const tabela = res.rows
-        return tabela
-    } 
-    catch (ex){
-        console.log('Erro no Post: ' + ex)
+        console.log('iniciando conexao')
+        const res = await db.query('select * from cadastro ORDER BY id DESC ')
+        console.log('Leitura concluída com sucesso:', res.rowCount, 'registro(s) encontrado(s).');
+        return res.rows;
+    } catch (error) {
+        console.error('Erro ao ler dados:', error);
+        throw error;
     }
-    finally{
-        // await db.client.end()
-        // console.log('Cliente desconectado')
-    }}
+}
 
 module.exports = Get

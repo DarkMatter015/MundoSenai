@@ -37,7 +37,7 @@ body{
 }
 
 table{
-    border: 3px solid #0051ff;
+    border: 1px solid #0051ff;
     border-collapse: collapse;
     text-align: center;
     table-layout: fixed;
@@ -47,7 +47,7 @@ table{
 
 .titulos{
     font-weight: bolder;
-    border: 3px solid #0051ff;
+    border: 2px solid #0051ff;
 }
 
 td{

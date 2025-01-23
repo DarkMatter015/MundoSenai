@@ -27,8 +27,16 @@
         {{#each tabela}}
             <tr>
                 <td>{{nome}}</td>
+                {{#if telefone}}
                 <td>{{telefone}}</td>
+                {{else}}
+                <td> - </td>
+                {{/if}}
+                {{#if email}}
                 <td>{{email}}</td>
+                {{else}}
+                <td> - </td>
+                {{/if}}
                 <td>{{idade}}</td>
             </tr>
         {{/each}}
